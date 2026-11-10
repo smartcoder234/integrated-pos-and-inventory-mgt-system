@@ -1,0 +1,11 @@
+{% include "layouts/base.html" %}
+{% block title %}Home page{% endblock title %}
+{% block content %}
+<h1>All Users</h1>
+<table>
+    {% for user in users %}
+        <li>{{ user['name'] }}</li>
+    {% endfor %}
+
+</ta>
+{% endblock content %}

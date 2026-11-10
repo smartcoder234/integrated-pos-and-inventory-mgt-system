@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %}Home page{% endblock  %}</title>
+</head>
+<body>
+    {#
+    <header>
+        <nav class="navbar-container">
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="brandlogo">
+            </a>
+            <ul class='menu'>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact_us') }}">Contact</a></li>
+                <li><a href="{{ url_for('user_list') }}">Users</a></li>
+            </ul>
+        </nav>
+    </header>
+    #}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="brandlogo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="{{ url_for('contact_us') }}" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <ul class="d-flex" role="search">
+        <li class="nav-item me-4">
+          <a class="btn btn-outline-primary" href="{{ url_for('about') }}">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="{{ url_for('about') }}">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    {% block content %}
+    
+    {% endblock content %}
+
+    <footer>
+        <p>Copyright 2026</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
